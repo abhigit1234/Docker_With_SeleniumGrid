@@ -1,0 +1,8 @@
+BaseClass\BasePage.class
+PageObjectClass\PageObjBase.class
+Utilities\ExcelDataProvider.class
+Utilities\ReadConfig.class
+TestClass\TestMethod.class
+demo\demo.class
+PageObjectClass\PageObjRegister.class
+Utilities\ReadExcel.class

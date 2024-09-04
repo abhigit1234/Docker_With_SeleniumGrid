@@ -1,0 +1,49 @@
+Docker Commands
+----------------------
+docker info
+docker -v
+docker version
+docker login
+
+Docker Images
+------------------
+docker pull ubuntu after adding images
+docker images
+docker rmi imageid/name
+
+
+Docker Containers
+---------------------
+docker ps - shows image that are only in running state
+docker run imagename - will create container
+docker start container id/name
+docker stop container id/name
+docker rm container id/name
+docker run -it ubuntu - to execute linux commands
+
+Docker system 
+-----------------
+docker stats
+docker system df
+docker system prune -f - removes all containers which not running
+
+Running Docker Containers By Using Following Commands
+-----------------------------------------------------------------------
+
+1) docker network create grid 
+2) docker run -d -p 4441-4444:4441-4444 --net grid --name selenium-hub selenium/hub 
+
+----syntax for port =  docker run -p <host_port_start>-<host_port_end>:<container_port_start>-<container_port_end> <image>
+
+3) docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub -e SE_EVENT_BUS_PUBLISH_PORT=4442 -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 selenium/node-chrome
+4) Copy same for Firefox and Edge and Opera
+5) Start Executing in eclipse
+6) Docker network rm grid
+
+
+
+Increase Concurrency Sessions In Grid
+--------------------------------------------
+docker run -d -e SE_EVENT_BUS_HOST=selenium-hub -e SE_EVENT_BUS_PUBLISH_PORT=4442 -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 -e SE_NODE_MAX_SESSIONS=5 -e SE_NODE_MAX_INSTANCES=10 --network grid --shm-size="2g" selenium/node-chrome
+
+
