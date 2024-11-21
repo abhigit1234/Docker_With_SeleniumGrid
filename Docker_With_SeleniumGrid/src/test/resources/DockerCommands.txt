@@ -31,7 +31,7 @@ Running Docker Containers By Using Following Commands
 -----------------------------------------------------------------------
 
 1) docker network create grid 
-2) docker run -d -p 4441-4444:4441-4444 --net grid --name selenium-hub selenium/hub 
+2) docker run -d -p 4441-4444:4441-4444 --net grid -e GRID_MAX_SESSION=20  --name selenium-hub selenium/hub 
 
 ----syntax for port =  docker run -p <host_port_start>-<host_port_end>:<container_port_start>-<container_port_end> <image>
 
